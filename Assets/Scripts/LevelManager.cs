@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum CableTypes {Normal=1, Blocked, Gap};  
+
 public class LevelManager : MonoBehaviour {
 
 	public int NumberOfPlayers;
@@ -9,6 +11,13 @@ public class LevelManager : MonoBehaviour {
 	public PoolManager NormalCables;
 	public PoolManager BlockedCables;
 	public PoolManager GapCables;
+
+	[Range(0, 100)]
+	public int normalCablesProbability;
+	[Range(0, 100)]
+	public int blockedCablesProbability;
+	[Range(0, 100)]
+	public int gapCablesProbability;
 
     //Dummy
     public List<Transform> CablePositions;
@@ -48,24 +57,33 @@ public class LevelManager : MonoBehaviour {
 
     private GameObject GetRandomCable() {
         GameObject randomCable = null;
-
-        // TODO: make probabilities to get wires... like 70% normal 15% gaps and 15% blocked
-
-        //Get just normal random for now (MU CUTRE)
-
-        int rand = Random.Range(0, 3);
-        if (rand == 0) {
+		CableTypes cableType = this.getRandomCableType ();
+		Debug.Log ("Cable type: " + cableType);
+		if (cableType == CableTypes.Normal) {
             randomCable = NormalCables.GetPooledObject();
         }
-        else if (rand == 1)
+		else if (cableType == CableTypes.Blocked)
         {
             randomCable = BlockedCables.GetPooledObject();
         }
-        else if (rand == 2)
+		else if (cableType == CableTypes.Gap)
         {
             randomCable = GapCables.GetPooledObject();
         }
-
         return randomCable;
+	}
+
+	private CableTypes getRandomCableType(){
+		int rand = Random.Range(0, 100);
+		if (rand <= normalCablesProbability) {
+			return CableTypes.Normal;
+		} else if (rand <= normalCablesProbability + blockedCablesProbability) {
+			return CableTypes.Blocked;
+		} else if (rand <= normalCablesProbability + blockedCablesProbability + gapCablesProbability) {
+			return CableTypes.Gap;
+		} else {
+			//TODO: exception
+			return 0;
+		}
 	}
 }
