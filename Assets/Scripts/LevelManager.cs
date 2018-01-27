@@ -53,6 +53,10 @@ public class LevelManager : MonoBehaviour {
 
 		PrepareCables ();
 	}
+
+    public bool IsRunning() {
+        return StartThingy;
+    }
 	
 	// Update is called once per frame
 	void Update () {
