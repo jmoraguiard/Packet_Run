@@ -7,8 +7,6 @@ enum CableTypes {Normal=1, Blocked, Gap};
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance;
 
-	private int _numberOfPlayers = 4;
-
 	public PoolManager NormalCables;
 	public PoolManager BlockedCables;
 	public PoolManager GapCables;
@@ -48,20 +46,20 @@ public class LevelManager : MonoBehaviour {
     //    PrepareGame();
     //}
 
-    public void PrepareGame(){
-        _numberOfActiveCables = _numberOfPlayers + Mathf.Max(_numberOfPlayers - 1, 1);
+    public void PrepareGame(int numberOfPlayer){
+        _numberOfActiveCables = numberOfPlayer + Mathf.Max(numberOfPlayer - 1, 1);
 
         _lastObjects = new GameObject[_numberOfActiveCables];
 
         PrepareCables();
     }
 
-    public void SetNumberOfPlayers(int number){
-        _numberOfPlayers = number;
-    }
-
     public bool IsRunning() {
         return StartThingy;
+    }
+
+    public void ToggleRunning(bool value){
+        StartThingy = value;
     }
 
     public void AddCableToLine(int lineIndex) {
