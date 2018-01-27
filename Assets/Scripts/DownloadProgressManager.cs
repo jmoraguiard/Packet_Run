@@ -19,12 +19,15 @@ public class DownloadProgressManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-        if (Progress.fillAmount < 1){
-            Progress.fillAmount += UpdateRatio * Time.deltaTime; // TODO: Add velocity multiplier
-        }
-        else {
-            if (OnProgressEnds != null) OnProgressEnds();
+        if (LevelManager.Instance.IsRunning()) {
+            if (Progress.fillAmount < 1)
+            {
+                Progress.fillAmount += UpdateRatio * Time.deltaTime; // TODO: Add velocity multiplier
+            }
+            else
+            {
+                if (OnProgressEnds != null) OnProgressEnds();
+            }
         }
 	}
 }
