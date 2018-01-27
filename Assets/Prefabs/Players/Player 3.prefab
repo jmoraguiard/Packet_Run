@@ -672,7 +672,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101010101
-        actionIsOpen: 000000000000
+        actionIsOpen: 000000000101
         actionStartIndex: 0000000003000000070000000c0000001400000019000000
         actionHashCodes: 603dd9052181e8026ba59301f6e5be03876045021bcdca04
         unityObjectParams: []
@@ -851,7 +851,7 @@ MonoBehaviour:
         - Finished
         - 
         - 
-        byteData: 0000000100000000000000
+        byteData: 0000000100000000000101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -1580,7 +1580,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
