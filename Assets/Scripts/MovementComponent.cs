@@ -21,7 +21,8 @@ public class MovementComponent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(LevelManager.Instance.IsRunning()) {
-            Vector3 movement = new Vector3(-_velocity, 0, 0) * Time.deltaTime;
+            float multiplier = LevelManager.Instance.getSpeedMultiplier();
+            Vector3 movement = new Vector3(-_velocity * multiplier, 0, 0) * Time.deltaTime;
             transform.Translate(movement, Space.World);
             if (transform.position.x <= _limit) {
                 OnDisappear.Invoke(_lineIndex);

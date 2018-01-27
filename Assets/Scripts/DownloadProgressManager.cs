@@ -27,7 +27,7 @@ public class DownloadProgressManager : MonoBehaviour {
             if (Progress.fillAmount < 1)
             {
                 timer += Time.deltaTime;
-                Progress.fillAmount += UpdateRatio * Time.deltaTime; // TODO: Add velocity multiplier
+                Progress.fillAmount += UpdateRatio * Time.deltaTime * LevelManager.Instance.getSpeedMultiplier();
 
                 int minutes = Mathf.FloorToInt(timer / 60F);
                 int seconds = Mathf.FloorToInt(timer - minutes * 60);
