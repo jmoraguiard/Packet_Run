@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour {
 	public PoolManager BlockedCables;
 	public PoolManager GapCables;
 
+    public float Velocity = 5f;
+
 	[Range(0, 100)]
 	public int normalCablesProbability;
 	[Range(0, 100)]
@@ -21,14 +23,24 @@ public class LevelManager : MonoBehaviour {
 
     //Dummy
     public List<Transform> CablePositions;
+    public bool StartThingy = false;
 
-	private int _activeCables;
+    public GameObject[][] ActiveCables;
+
+    private int _numberOfActiveCables;
 	private float _cableOffset = 4f;
 	private int _sizeOfVisibleCable = 20;
 
 	// Use this for initialization
 	void Start () {
-        _activeCables = NumberOfPlayers + (NumberOfPlayers - 1);
+        //TODO: autodefine number of active players
+        _numberOfActiveCables = NumberOfPlayers + 1;
+
+        ActiveCables = new GameObject[_numberOfActiveCables][];
+
+        for (int i = 0; i < _numberOfActiveCables; ++i){
+            ActiveCables[i] = new GameObject[_sizeOfVisibleCable];
+        }
 
 		PrepareCables ();
 	}
@@ -36,23 +48,39 @@ public class LevelManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Here we do the endless cable...
+
+        // TODO: if for starting
+        if (StartThingy){
+            for (int i = 0; i < _numberOfActiveCables; ++i){
+                for (int j = 0; j < _sizeOfVisibleCable; ++j){
+                    Vector3 movement = new Vector3(ActiveCables[i][j].transform.position.x - Velocity, 0, 0);
+                    ActiveCables[i][j].transform.position = movement * Time.deltaTime;
+                }
+            }
+        }
 	}
 
 	private void PrepareCables() {
-		for (int i = 0; i < _activeCables; ++i) {
-            CreateLine (CablePositions[i].position);
+		for (int i = 0; i < _numberOfActiveCables; ++i) {
+            CreateLine (i, CablePositions[i].position);
 		}
 	}
 
-	// TODO: give the transform to this.
-	private void CreateLine(Vector3 position) {
+	private void CreateLine(int indexOfCable, Vector3 position) {
+
+        GameObject[] line = new GameObject[_sizeOfVisibleCable];
+
 		for (int i = 0; i < _sizeOfVisibleCable; ++i) {
 			GameObject cable = GetRandomCable ();
             cable.transform.position = position;
             cable.SetActive(true);
 
-            position = new Vector3(position.x, position.y + _cableOffset, position.z);
+            line[i] = cable;
+
+            position = new Vector3(position.x + _cableOffset, position.y, position.z);
 		}
+
+        ActiveCables[indexOfCable] = line;
 	}
 
     private GameObject GetRandomCable() {
