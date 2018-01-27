@@ -368,7 +368,7 @@ MonoBehaviour:
         customNames:
         - 
         actionEnabled: 01
-        actionIsOpen: 01
+        actionIsOpen: 00
         actionStartIndex: 00000000
         actionHashCodes: 27fbe103
         unityObjectParams: []
@@ -554,6 +554,8 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.CreateObject
+        - HutongGames.PlayMaker.Actions.SelectRandomColor
+        - HutongGames.PlayMaker.Actions.SetMaterialColor
         - HutongGames.PlayMaker.Actions.ArrayAdd
         - HutongGames.PlayMaker.Actions.SetFsmInt
         - HutongGames.PlayMaker.Actions.SendEvent
@@ -561,12 +563,14 @@ MonoBehaviour:
         - Increment Number of Players Created
         - Create Player Object
         - 
+        - 
+        - 
         - Set Number to Player
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0000000000
-        actionStartIndex: 0000000003000000080000000a0000000f000000
-        actionHashCodes: 603dd905bf83c900978a9b03081bbf055e69bb04
+        actionEnabled: 01010101010101
+        actionIsOpen: 00000101000000
+        actionStartIndex: 0000000003000000080000001b000000210000002300000028000000
+        actionHashCodes: 603dd905bf83c9006ff7590431ae6403978a9b03081bbf055e69bb04
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -589,6 +593,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Temp Player
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -641,6 +653,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: _Color
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: Player Controller
         - useVariable: 0
           name: 
@@ -648,7 +666,14 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Player Number
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 0}
         fsmVarParams:
         - variableName: Temp Player
           objectType: UnityEngine.Object
@@ -695,6 +720,54 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 0
         fsmIntParams:
         - useVariable: 1
@@ -709,6 +782,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: Number of Players Created
           tooltip: 
@@ -730,17 +809,79 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 0, z: 0}
-        fsmColorParams: []
+        fsmColorParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 1, g: 0, b: 0, a: 1}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 0, g: 0.006896496, b: 1, a: 1}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 0, g: 1, b: 0.006896496, a: 1}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 1, g: 0.7241379, b: 0, a: 1}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 1, g: 1, b: 1, a: 1}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 1, g: 0.9724138, b: 0, a: 1}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 0, g: 1, b: 1, a: 1}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 0.986207, g: 0, b: 1, a: 1}
+        - useVariable: 1
+          name: Temp Color
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 0, g: 0, b: 0, a: 1}
+        - useVariable: 1
+          name: Temp Color
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {r: 0, g: 0, b: 0, a: 1}
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
         - Player Created
-        byteData: 000000
-        arrayParamSizes: 
-        arrayParamTypes: []
+        byteData: 00000000
+        arrayParamSizes: 0800000008000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmColor
+        - HutongGames.PlayMaker.FsmFloat
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 10000000100000000100000013000000130000001c0000001c00000013000000290000002700000014000000120000001200000010000000010000001f000000170000000f00000001000000
+        paramDataType: 10000000100000000100000013000000130000001c0000001c000000130000000c00000019000000190000001900000019000000190000001900000019000000190000000c0000000f0000000f0000000f0000000f0000000f0000000f0000000f0000000f00000019000000140000001000000020000000120000001900000001000000290000002700000014000000120000001200000010000000010000001f000000170000000f00000001000000
         paramName:
         - intVariable
         - add
@@ -750,6 +891,31 @@ MonoBehaviour:
         - position
         - rotation
         - storeObject
+        - colors
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - weights
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - storeColor
+        - gameObject
+        - materialIndex
+        - material
+        - namedColor
+        - color
+        - everyFrame
         - array
         - value
         - gameObject
@@ -761,8 +927,8 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 00000000010000000000000000000000010000000000000001000000020000000000000000000000000000000000000001000000020000000100000000000000000000000000000002000000
-        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
+        paramDataPos: 0000000001000000000000000000000001000000000000000100000002000000000000000000000001000000020000000300000004000000050000000600000007000000010000000000000001000000020000000300000004000000050000000600000007000000080000000000000002000000000000000000000009000000010000000000000000000000010000000100000002000000030000000200000000000000000000000800000003000000
+        paramByteDataSize: 0000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
     events:
     - name: Create Player
       isSystemEvent: 0
@@ -811,7 +977,13 @@ MonoBehaviour:
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
-      colorVariables: []
+      colorVariables:
+      - useVariable: 1
+        name: Temp Color
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {r: 0, g: 0, b: 0, a: 1}
       rectVariables: []
       quaternionVariables: []
       gameObjectVariables:
@@ -828,7 +1000,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
