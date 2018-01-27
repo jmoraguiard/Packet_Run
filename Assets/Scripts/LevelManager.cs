@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _activeCables = NumberOfPlayers + Mathf.Max(NumberOfPlayers - 1, 1);
+        _numberOfActiveCables = NumberOfPlayers + Mathf.Max(NumberOfPlayers - 1, 1);
 
         ActiveCables = new GameObject[_numberOfActiveCables][];
 
