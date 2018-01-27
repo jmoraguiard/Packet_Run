@@ -26,13 +26,15 @@ public class LevelManager : MonoBehaviour {
     public List<Transform> CablePositions;
     public bool StartThingy = false;
 
-    public GameObject[][] ActiveCables;
+    public List<Queue<GameObject>> ActiveCables;
 
     private int _numberOfActiveCables;
-	private float _cableOffset = 4f;
+	private float _cableOffset = 3f;
 	private int _sizeOfVisibleCable = 20;
 
-	// Use this for initialization
+    private GameObject[] _lastObjects;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -45,10 +47,12 @@ public class LevelManager : MonoBehaviour {
     void Start () {
         _numberOfActiveCables = NumberOfPlayers + Mathf.Max(NumberOfPlayers - 1, 1);
 
-        ActiveCables = new GameObject[_numberOfActiveCables][];
+        _lastObjects = new GameObject[_numberOfActiveCables];
+
+        ActiveCables = new List<Queue<GameObject>>();//new GameObject[_numberOfActiveCables][];
 
         for (int i = 0; i < _numberOfActiveCables; ++i){
-            ActiveCables[i] = new GameObject[_sizeOfVisibleCable];
+            ActiveCables.Add(new Queue<GameObject>()); //new GameObject[_sizeOfVisibleCable];
         }
 
 		PrepareCables ();
@@ -57,21 +61,15 @@ public class LevelManager : MonoBehaviour {
     public bool IsRunning() {
         return StartThingy;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		//Here we do the endless cable...
 
-        // TODO: if for starting. Must wait until all cables are loaded...
-        if (StartThingy){
-            for (int i = 0; i < _numberOfActiveCables; ++i){
-                for (int j = 0; j < _sizeOfVisibleCable; ++j){
-                    Vector3 movement = new Vector3(-Velocity, 0, 0) * Time.deltaTime;
-                    ActiveCables[i][j].transform.Translate(movement, Space.World);
-                }
-            }
-        }
-	}
+    public void AddCableToLine(int lineIndex) {
+        GameObject cable = GetRandomCable();
+        Vector3 position = _lastObjects[lineIndex].transform.position;
+        MovementComponent movementComponent = cable.GetComponent<MovementComponent>();
+        movementComponent.Init(Velocity, new Vector3(position.x + _cableOffset, position.y, position.z), -_cableOffset, lineIndex);
+        movementComponent.OnDisappear += AddCableToLine;
+        _lastObjects[lineIndex] = cable;
+    }
 
 	private void PrepareCables() {
 		for (int i = 0; i < _numberOfActiveCables; ++i) {
@@ -79,21 +77,21 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+    private float LineXLimit() {
+        return _cableOffset * _numberOfActiveCables;
+    }
+
 	private void CreateLine(int indexOfCable, Vector3 position) {
-
-        GameObject[] line = new GameObject[_sizeOfVisibleCable];
-
+        float initialX = position.x;
+        Vector3 aux = new Vector3(position.x, position.y, position.z);
 		for (int i = 0; i < _sizeOfVisibleCable; ++i) {
 			GameObject cable = GetRandomCable ();
-            cable.transform.position = position;
-            cable.SetActive(true);
-
-            line[i] = cable;
-
-            position = new Vector3(position.x + _cableOffset, position.y, position.z);
-		}
-
-        ActiveCables[indexOfCable] = line;
+            MovementComponent movementComponent = cable.GetComponent<MovementComponent>();
+            movementComponent.Init(Velocity, new Vector3(aux.x + _cableOffset, aux.y, aux.z), -_cableOffset, indexOfCable);
+            movementComponent.OnDisappear += AddCableToLine;
+            _lastObjects[indexOfCable] = cable;
+            aux = _lastObjects[indexOfCable].transform.position;
+        }
 	}
 
     private GameObject GetRandomCable() {
