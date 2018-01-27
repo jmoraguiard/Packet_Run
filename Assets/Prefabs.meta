@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a497ff08137c8f0419cdce9255360092
 folderAsset: yes
 timeCreated: 1517059900
+=======
+guid: 218f4545d67d04f5a862355332993ef2
+folderAsset: yes
+timeCreated: 1517003152
+>>>>>>> cable-manager
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

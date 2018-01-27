@@ -14,5 +14,5 @@ MonoBehaviour:
   welcomeScreenVersion: '1.8.8 '
   playmakerVersion: 
   showWelcomeScreen: 1
-  showUpgradeGuide: 0
+  showUpgradeGuide: 1
   lastAutoUpdateSignature: 
