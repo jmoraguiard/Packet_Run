@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour {
 
     private int _numberOfActiveCables;
 	private float _cableOffset = 3f;
-	private int _sizeOfVisibleCable = 20;
+	private int _sizeOfVisibleCable = 23;
 
     private GameObject[] _lastObjects;
 
