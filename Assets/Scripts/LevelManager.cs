@@ -145,15 +145,13 @@ public class LevelManager : MonoBehaviour {
 
     public void setPlayersXPositions(float[] xPositions) {
         bool shouldGoFast = true;
-		Debug.Log ("Received positions:");
         for (int i = 0; i < xPositions.Length; ++i) {
             shouldGoFast = shouldGoFast && (xPositions[i] > _sizeOfVisibleCable *_cableOffset / 2);
-			Debug.Log (xPositions[i] + " should go fast? " +shouldGoFast.ToString());
         }
         bool shouldGoSlow = true;
         for (int i = 0; i < xPositions.Length; ++i)
         {
-            shouldGoFast = shouldGoFast && (xPositions[i] < _sizeOfVisibleCable * _cableOffset / 2);
+			shouldGoSlow = shouldGoSlow && (xPositions[i] < _sizeOfVisibleCable * _cableOffset / 2);
         }
         if (shouldGoFast) {
             _speedMultiplier = 1.25f;

@@ -1926,7 +1926,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101010101010101010101010101
-        actionIsOpen: 00000000000000000000000000000000
+        actionIsOpen: 00000000000000000000000000000001
         actionStartIndex: 0000000002000000050000000a0000000f00000011000000160000001b0000001d0000002200000027000000290000002e00000033000000350000003c000000
         actionHashCodes: 978a9b03a790bd036ba5930187604502978a9b036ba5930187604502978a9b036ba5930187604502978a9b036ba5930187604502978a9b03ca51e9005e69bb04
         unityObjectParams: []
@@ -2492,7 +2492,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
+          value: 0.5
         fsmIntParams:
         - useVariable: 0
           name: 
