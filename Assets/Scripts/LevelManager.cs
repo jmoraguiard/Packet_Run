@@ -5,6 +5,7 @@ using UnityEngine;
 enum CableTypes {Normal=1, Blocked, Gap};  
 
 public class LevelManager : MonoBehaviour {
+    public static LevelManager Instance;
 
 	public int NumberOfPlayers;
 
@@ -32,7 +33,16 @@ public class LevelManager : MonoBehaviour {
 	private int _sizeOfVisibleCable = 20;
 
 	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(this);
+    }
+
+    // Use this for initialization
+    void Start () {
         _numberOfActiveCables = NumberOfPlayers + Mathf.Max(NumberOfPlayers - 1, 1);
 
         ActiveCables = new GameObject[_numberOfActiveCables][];
