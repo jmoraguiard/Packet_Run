@@ -69,10 +69,23 @@ MonoBehaviour:
       stringValues: []
       vector4Values: []
       objectReferences: []
+    - useVariable: 1
+      name: Players
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 3
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 000000000000000000000000000000000000000000000000
+    variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
   events:
   - Jump Down
   - Jump Up
