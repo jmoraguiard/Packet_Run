@@ -15,11 +15,11 @@ public class LevelManager : MonoBehaviour {
     public float Velocity = 5f;
 
 	[Range(0, 100)]
-	public int normalCablesProbability;
+	public int normalCablesProbability = 80;
 	[Range(0, 100)]
-	public int blockedCablesProbability;
+	public int blockedCablesProbability = 10;
 	[Range(0, 100)]
-	public int gapCablesProbability;
+	public int gapCablesProbability = 10;
 
     //Dummy
     public List<Transform> CablePositions;
