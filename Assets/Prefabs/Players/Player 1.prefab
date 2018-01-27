@@ -160,7 +160,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101010101
-        actionIsOpen: 000100000000
+        actionIsOpen: 000000000000
         actionStartIndex: 0000000005000000080000000f000000160000001a000000
         actionHashCodes: 876045029845b3055552ad055552ad050c8bc100f6e5be03
         unityObjectParams: []
@@ -239,7 +239,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 24
         - useVariable: 1
           name: X Input
           tooltip: 
@@ -513,7 +513,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 000101
+        actionIsOpen: 000001
         actionStartIndex: 00000000050000000c000000
         actionHashCodes: 876045021bcdca041bcdca04
         unityObjectParams: []
@@ -1178,7 +1178,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0000
+        actionIsOpen: 0001
         actionStartIndex: 0000000005000000
         actionHashCodes: 081bbf055e69bb04
         unityObjectParams: []
@@ -1419,7 +1419,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0101
+        actionIsOpen: 0000
         actionStartIndex: 0000000007000000
         actionHashCodes: b691f7036f1d0b04
         unityObjectParams: []
@@ -1574,7 +1574,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
