@@ -25,6 +25,7 @@ public class MovementComponent : MonoBehaviour {
             transform.Translate(movement, Space.World);
             if (transform.position.x <= _limit) {
                 OnDisappear.Invoke(_lineIndex);
+                OnDisappear = null;
                 gameObject.SetActive(false);
             }
         }
