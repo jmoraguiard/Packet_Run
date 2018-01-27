@@ -154,7 +154,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -442,7 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9e01bdbd41f4e65ab04f51823ebaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfPlayers: 4
   NormalCables: {fileID: 1033875955}
   BlockedCables: {fileID: 1884943993}
   GapCables: {fileID: 1477816444}
