@@ -22,6 +22,8 @@ public class LevelManager : MonoBehaviour {
 	[Range(0, 100)]
 	public int gapCablesProbability = 10;
 
+    public int normalCablesAfterObstacle = 3;
+
     //Dummy
     public List<Transform> CablePositions;
     public bool StartThingy = false;
@@ -32,6 +34,7 @@ public class LevelManager : MonoBehaviour {
 
     private GameObject[] _lastObjects;
 
+    private int[] _cableTypesCounter;
 
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class LevelManager : MonoBehaviour {
         _numberOfActiveCables = _numberOfPlayers + Mathf.Max(_numberOfPlayers - 1, 1);
 
         _lastObjects = new GameObject[_numberOfActiveCables];
+        _cableTypesCounter = new int[_numberOfActiveCables];
 
         PrepareCables();
     }
@@ -65,7 +69,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void AddCableToLine(int lineIndex) {
-        GameObject cable = GetRandomCable();
+        GameObject cable = GetRandomCable(lineIndex);
         Vector3 position = _lastObjects[lineIndex].transform.position;
         MovementComponent movementComponent = cable.GetComponent<MovementComponent>();
         movementComponent.Init(Velocity, new Vector3(position.x + _cableOffset, position.y, position.z), -_cableOffset, lineIndex);
@@ -86,7 +90,7 @@ public class LevelManager : MonoBehaviour {
 	private void CreateLine(int indexOfCable, Vector3 position) {
         Vector3 aux = new Vector3(position.x, position.y, position.z);
 		for (int i = 0; i < _sizeOfVisibleCable; ++i) {
-			GameObject cable = GetRandomCable ();
+            GameObject cable = GetRandomCable (indexOfCable);
             MovementComponent movementComponent = cable.GetComponent<MovementComponent>();
             movementComponent.Init(Velocity, new Vector3(aux.x + _cableOffset, aux.y, aux.z), -_cableOffset, indexOfCable);
             movementComponent.OnDisappear += AddCableToLine;
@@ -95,23 +99,32 @@ public class LevelManager : MonoBehaviour {
         }
 	}
 
-    private GameObject GetRandomCable() {
+    private GameObject GetRandomCable(int lineIndex) {
         GameObject randomCable = null;
-		CableTypes cableType = this.getRandomCableType ();
-		Debug.Log ("Cable type: " + cableType);
+        CableTypes cableType = CableTypes.Normal;
+        if (_cableTypesCounter[lineIndex] <= 0) {
+            cableType = this.getRandomCableType();
+        }
 		if (cableType == CableTypes.Normal) {
             randomCable = NormalCables.GetPooledObject();
+            _cableTypesCounter[lineIndex]--;
         }
 		else if (cableType == CableTypes.Blocked)
         {
             randomCable = BlockedCables.GetPooledObject();
+            _cableTypesCounter[lineIndex] = normalCablesAfterObstacle;
         }
 		else if (cableType == CableTypes.Gap)
         {
             randomCable = GapCables.GetPooledObject();
+            _cableTypesCounter[lineIndex] = normalCablesAfterObstacle;
         }
         return randomCable;
 	}
+
+    private GameObject GetNormalCable() {
+        return NormalCables.GetPooledObject();
+    }
 
 	private CableTypes getRandomCableType(){
 		int rand = Random.Range(0, 100);
