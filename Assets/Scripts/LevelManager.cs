@@ -48,12 +48,12 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
 		//Here we do the endless cable...
 
-        // TODO: if for starting
+        // TODO: if for starting. Must wait until all cables are loaded...
         if (StartThingy){
             for (int i = 0; i < _numberOfActiveCables; ++i){
                 for (int j = 0; j < _sizeOfVisibleCable; ++j){
-                    Vector3 movement = new Vector3(ActiveCables[i][j].transform.position.x - Velocity, 0, 0);
-                    ActiveCables[i][j].transform.position = movement * Time.deltaTime;
+                    Vector3 movement = new Vector3(-Velocity, 0, 0) * Time.deltaTime;
+                    ActiveCables[i][j].transform.Translate(movement, Space.World);
                 }
             }
         }
