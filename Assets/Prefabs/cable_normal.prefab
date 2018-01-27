@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4903437139678130}
+  - component: {fileID: 114993331857504600}
   m_Layer: 0
   m_Name: cable_normal
   m_TagString: Untagged
@@ -111,3 +112,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1599001864241484}
   m_Mesh: {fileID: 4300000, guid: 709de1fd1798b4acab7f26744fca0885, type: 3}
+--- !u!114 &114993331857504600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047135550285002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba222d7511b6d4c98b1f941fad34fa87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
