@@ -22,7 +22,7 @@ public class DownloadProgressManager : MonoBehaviour {
         if (LevelManager.Instance.IsRunning()) {
             if (Progress.fillAmount < 1)
             {
-                Progress.fillAmount += UpdateRatio * Time.deltaTime; // TODO: Add velocity multiplier
+                Progress.fillAmount += UpdateRatio * Time.deltaTime * LevelManager.Instance.getSpeedMultiplier();
             }
             else
             {

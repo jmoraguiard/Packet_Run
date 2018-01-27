@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour {
     private GameObject[] _lastObjects;
 
     private int[] _cableTypesCounter;
+    public float _speedMultiplier = 1.0f;
 
     private void Awake()
     {
@@ -66,6 +67,10 @@ public class LevelManager : MonoBehaviour {
 
     public bool IsRunning() {
         return StartThingy;
+    }
+
+    public float getSpeedMultiplier() {
+        return _speedMultiplier;
     }
 
     public void AddCableToLine(int lineIndex) {
@@ -139,4 +144,24 @@ public class LevelManager : MonoBehaviour {
 			return 0;
 		}
 	}
+
+
+    public void setPlayersXPositions(float[] xPositions) {
+        bool shouldGoFast = true;
+        for (int i = 0; i < xPositions.Length; ++i) {
+            shouldGoFast = shouldGoFast && (xPositions[i] > _sizeOfVisibleCable *_cableOffset / 2);
+        }
+        bool shouldGoSlow = true;
+        for (int i = 0; i < xPositions.Length; ++i)
+        {
+            shouldGoFast = shouldGoFast && (xPositions[i] < _sizeOfVisibleCable * _cableOffset / 2);
+        }
+        if (shouldGoFast) {
+            _speedMultiplier = 1.25f;
+        } else if (shouldGoSlow) {
+            _speedMultiplier = 0.75f;
+        } else {
+            _speedMultiplier = 1.0f;
+        }
+    }
 }
