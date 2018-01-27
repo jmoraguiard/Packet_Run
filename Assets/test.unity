@@ -449,6 +449,7 @@ MonoBehaviour:
   normalCablesProbability: 70
   blockedCablesProbability: 15
   gapCablesProbability: 15
+  normalCablesAfterObstacle: 3
   CablePositions:
   - {fileID: 488839814}
   - {fileID: 1403400104}
@@ -458,6 +459,7 @@ MonoBehaviour:
   - {fileID: 2039464403}
   - {fileID: 329249267}
   StartThingy: 0
+  _speedMultiplier: 1
 --- !u!4 &1240082575
 Transform:
   m_ObjectHideFlags: 0
