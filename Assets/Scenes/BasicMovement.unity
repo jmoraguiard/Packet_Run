@@ -590,7 +590,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
     handleJointBreak: 0
     handleJointBreak2D: 0
     handleOnGUI: 0
-    handleFixedUpdate: 0
+    handleFixedUpdate: 1
     handleLateUpdate: 0
     handleApplicationEvents: 0
     handleLegacyNetworking: 0
@@ -907,7 +907,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 010101
+        actionIsOpen: 000000
         actionStartIndex: 00000000050000000c000000
         actionHashCodes: 876045021bcdca041bcdca04
         unityObjectParams: []
@@ -1052,15 +1052,19 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.GetFsmFloat
         - HutongGames.PlayMaker.Actions.FloatCompare
+        - HutongGames.PlayMaker.Actions.IntClamp
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0001
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 876045021bcdca04
+        - 
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 00000001
+        actionStartIndex: 0000000003000000080000000f000000
+        actionHashCodes: 603dd905876045021bcdca042181e802
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -1120,7 +1124,37 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: Cable
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 1
+          name: Cable
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 7
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -1131,13 +1165,16 @@ MonoBehaviour:
         - Finished
         - 
         - 
-        byteData: 0101
+        byteData: 00010101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000012000000120000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 1000000010000000010000001400000012000000120000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000010000000100000001000000001000000
         paramName:
+        - intVariable
+        - add
+        - everyFrame
         - gameObject
         - fsmName
         - variableName
@@ -1150,8 +1187,12 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 000000000000000001000000000000000000000001000000020000000300000000000000010000000200000001000000
-        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
+        - intVariable
+        - minValue
+        - maxValue
+        - everyFrame
+        paramDataPos: 00000000010000000000000000000000000000000100000000000000010000000100000002000000030000000000000001000000020000000200000002000000030000000400000003000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
     - name: Jumping Up
       description: 
       colorIndex: 0
@@ -1175,15 +1216,19 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.GetFsmFloat
         - HutongGames.PlayMaker.Actions.FloatCompare
+        - HutongGames.PlayMaker.Actions.IntClamp
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0001
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 876045021bcdca04
+        - 
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 00000000
+        actionStartIndex: 0000000003000000080000000f000000
+        actionHashCodes: 603dd905876045021bcdca042181e802
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -1243,7 +1288,37 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: Cable
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: -1
+        - useVariable: 1
+          name: Cable
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 7
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -1254,13 +1329,16 @@ MonoBehaviour:
         - Finished
         - 
         - 
-        byteData: 0101
+        byteData: 00010101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000012000000120000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 1000000010000000010000001400000012000000120000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000010000000100000001000000001000000
         paramName:
+        - intVariable
+        - add
+        - everyFrame
         - gameObject
         - fsmName
         - variableName
@@ -1273,8 +1351,12 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 000000000000000001000000000000000000000001000000020000000300000000000000010000000200000001000000
-        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
+        - intVariable
+        - minValue
+        - maxValue
+        - everyFrame
+        paramDataPos: 00000000010000000000000000000000000000000100000000000000010000000100000002000000030000000000000001000000020000000200000002000000030000000400000003000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
     events:
     - name: Finished
       isSystemEvent: 0
@@ -1294,7 +1376,13 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 0
-      intVariables: []
+      intVariables:
+      - useVariable: 1
+        name: Cable
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 3
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -1310,7 +1398,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
