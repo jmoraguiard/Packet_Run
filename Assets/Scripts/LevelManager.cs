@@ -7,7 +7,7 @@ enum CableTypes {Normal=1, Blocked, Gap};
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance;
 
-	public int NumberOfPlayers;
+	private int _numberOfPlayers = 4;
 
 	public PoolManager NormalCables;
 	public PoolManager BlockedCables;
@@ -26,8 +26,6 @@ public class LevelManager : MonoBehaviour {
     public List<Transform> CablePositions;
     public bool StartThingy = false;
 
-    public List<Queue<GameObject>> ActiveCables;
-
     private int _numberOfActiveCables;
 	private float _cableOffset = 3f;
 	private int _sizeOfVisibleCable = 20;
@@ -43,20 +41,24 @@ public class LevelManager : MonoBehaviour {
             Destroy(this);
     }
 
-    // Use this for initialization
-    void Start () {
-        _numberOfActiveCables = NumberOfPlayers + Mathf.Max(NumberOfPlayers - 1, 1);
+    // Commented for PlayMaker
+    //private void Start()
+    //{
+
+    //    PrepareGame();
+    //}
+
+    public void PrepareGame(){
+        _numberOfActiveCables = _numberOfPlayers + Mathf.Max(_numberOfPlayers - 1, 1);
 
         _lastObjects = new GameObject[_numberOfActiveCables];
 
-        ActiveCables = new List<Queue<GameObject>>();//new GameObject[_numberOfActiveCables][];
+        PrepareCables();
+    }
 
-        for (int i = 0; i < _numberOfActiveCables; ++i){
-            ActiveCables.Add(new Queue<GameObject>()); //new GameObject[_sizeOfVisibleCable];
-        }
-
-		PrepareCables ();
-	}
+    public void SetNumberOfPlayers(int number){
+        _numberOfPlayers = number;
+    }
 
     public bool IsRunning() {
         return StartThingy;
@@ -82,7 +84,6 @@ public class LevelManager : MonoBehaviour {
     }
 
 	private void CreateLine(int indexOfCable, Vector3 position) {
-        float initialX = position.x;
         Vector3 aux = new Vector3(position.x, position.y, position.z);
 		for (int i = 0; i < _sizeOfVisibleCable; ++i) {
 			GameObject cable = GetRandomCable ();
