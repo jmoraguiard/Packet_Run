@@ -12,18 +12,30 @@ MonoBehaviour:
   m_Name: PlayMakerGlobals
   m_EditorClassIdentifier: 
   variables:
-    floatVariables: []
+    floatVariables:
+    - useVariable: 1
+      name: MaxX
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 60
+    - useVariable: 1
+      name: MinX
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player X Speed
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 24
     intVariables: []
     boolVariables: []
     stringVariables: []
     vector2Variables: []
-    vector3Variables:
-    - useVariable: 1
-      name: Input Vector Global
-      tooltip: 
-      showInInspector: 0
-      networkSync: 0
-      value: {x: 0, y: 0, z: 0}
+    vector3Variables: []
     colorVariables: []
     rectVariables: []
     quaternionVariables: []
@@ -31,11 +43,24 @@ MonoBehaviour:
     objectVariables: []
     materialVariables: []
     textureVariables: []
-    arrayVariables: []
+    arrayVariables:
+    - useVariable: 1
+      name: Cable Z Positions
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 0
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000
+    variableCategoryIDs: 00000000000000000000000000000000
   events:
   - Jump Down
   - Jump Up
