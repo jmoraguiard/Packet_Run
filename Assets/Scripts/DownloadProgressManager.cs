@@ -14,6 +14,8 @@ public class DownloadProgressManager : MonoBehaviour {
 
     public Action<float> OnProgressEnds;
 
+	public PlayMakerFSM GameManager;
+
     public float CurrentPercent {
         get {
             return Progress.fillAmount * 100;
@@ -42,8 +44,16 @@ public class DownloadProgressManager : MonoBehaviour {
             }
             else
             {
-                if (OnProgressEnds != null) OnProgressEnds(timer);
+                //if (OnProgressEnds != null) OnProgressEnds(timer);
+				GameManager.Fsm.Event("FinishedDownload");
             }
+
+			//float percentage = (float)GameManager.FsmVariables.GetFsmFloat ("Percentage");
+			//percentage = Progress.fillAmount * 100;
+
+			//(float)GameManager.FsmVariables.GetFsmFloat ("Percentage") = Progress.fillAmount * 100;
+
+			//GameManager.FsmVariables.
         }
 	}
 }

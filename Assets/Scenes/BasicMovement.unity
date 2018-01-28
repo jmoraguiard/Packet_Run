@@ -1612,7 +1612,7 @@ MonoBehaviour:
         - Send Start Level Message
         - 
         actionEnabled: 010101010101
-        actionIsOpen: 010101000000
+        actionIsOpen: 000000000000
         actionStartIndex: 000000000200000004000000060000000d00000011000000
         actionHashCodes: 978a9b03978a9b03978a9b03ca51e90091d45a005e69bb04
         unityObjectParams: []
@@ -3667,17 +3667,17 @@ MonoBehaviour:
   fsm:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
-    name: Win Condition Manager
-    startState: Check Download Progress
+    name: Download Manager
+    startState: Init
     states:
-    - name: Check Download Progress
+    - name: Init
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
-        y: 100
-        width: 203
+        x: 54
+        y: 115
+        width: 100
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -3722,8 +3722,102 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
-    events: []
-    globalTransitions: []
+    - name: Finish Game
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 262
+        y: 116
+        width: 155
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.DebugFsmVariable
+        - HutongGames.PlayMaker.Actions.ApplicationQuit
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0100
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 32f7720400000000
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams:
+        - variableName: Percentage
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 0
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0000000001
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 070000002700000001000000
+        paramName:
+        - logLevel
+        - variable
+        - sendToUnityLog
+        paramDataPos: 000000000000000004000000
+        paramByteDataSize: 040000000000000001000000
+    events:
+    - name: Finished Download
+      isSystemEvent: 0
+      isGlobal: 0
+    globalTransitions:
+    - fsmEvent:
+        name: Finished Download
+        isSystemEvent: 0
+        isGlobal: 0
+      toState: Finish Game
+      linkStyle: 0
+      linkConstraint: 0
+      colorIndex: 0
     variables:
       floatVariables: []
       intVariables: []
@@ -3939,6 +4033,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114309093259893664, guid: 4d54a388c22074c7d8bcc9d0f2d1ab0e,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1022720332}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d54a388c22074c7d8bcc9d0f2d1ab0e, type: 2}
   m_IsPrefabParent: 0
