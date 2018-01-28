@@ -14,6 +14,12 @@ public class DownloadProgressManager : MonoBehaviour {
 
     public Action<float> OnProgressEnds;
 
+    public float CurrentPercent {
+        get {
+            return Progress.fillAmount * 100;
+        }
+    }
+
     private float timer = 0;
 
 	// Use this for initialization
