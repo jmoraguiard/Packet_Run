@@ -113,6 +113,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!21 &602010386
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/CRT
+  m_Shader: {fileID: 4800000, guid: a58601bfbe1634c4cb8f848f82f62811, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - hardPix: -4
+    - hardScan: -8
+    - maskDark: 1.03
+    - maskLight: 1.8
+    - resScale: 1
+    m_Colors:
+    - warp: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &607503398
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +959,7 @@ GameObject:
   - component: {fileID: 2114095176}
   - component: {fileID: 2114095175}
   - component: {fileID: 2114095174}
+  - component: {fileID: 2114095178}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1003,3 +1030,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2114095178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114095173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0438c5baddf4690bbcebb49cceb609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 602010386}
