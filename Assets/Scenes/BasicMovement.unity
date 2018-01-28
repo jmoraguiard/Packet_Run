@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edb8659a3a8447b4b6cbc42605035ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1415553014087136, guid: f9f08f0ed6bd2438e827bb54d68a790e,
+  PooledObject: {fileID: 1169630211967920, guid: c12e6664d5a6d4b4899f8b9e1db19069,
     type: 2}
   Amount: 50
 --- !u!1 &407352045
@@ -251,7 +251,7 @@ MonoBehaviour:
   NormalCables: {fileID: 1945778809}
   BlockedCables: {fileID: 53920077}
   GapCables: {fileID: 1484952793}
-  Velocity: 20
+  Velocity: 8
   normalCablesProbability: 85
   blockedCablesProbability: 8
   gapCablesProbability: 7
@@ -265,6 +265,7 @@ MonoBehaviour:
   - {fileID: 1628427998}
   - {fileID: 1394243828}
   StartThingy: 0
+  _cableOffset: 6.15
   _speedMultiplier: 1
 --- !u!4 &407352047
 Transform:
@@ -3043,7 +3044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edb8659a3a8447b4b6cbc42605035ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1162381508222302, guid: bcb192a541bde4f19b09d907551e0bcd,
+  PooledObject: {fileID: 1939320598523300, guid: 16a73af25dcc34475954d4ac8f14a117,
     type: 2}
   Amount: 50
 --- !u!4 &1484952794
@@ -3314,6 +3315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edb8659a3a8447b4b6cbc42605035ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1047135550285002, guid: f799df9e5f0b14d8ab634fed6c3acb84,
+  PooledObject: {fileID: 1298589903029074, guid: b18f85ced116943ca96f5fea22b6d150,
     type: 2}
-  Amount: 250
+  Amount: 200
