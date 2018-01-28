@@ -31,6 +31,8 @@ public class DownloadProgressManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyUp(KeyCode.E)){ Progress.fillAmount = 0.98f; }
+
         if (LevelManager.Instance.IsRunning()) {
             if (Progress.fillAmount < 1)
             {
@@ -47,13 +49,6 @@ public class DownloadProgressManager : MonoBehaviour {
                 //if (OnProgressEnds != null) OnProgressEnds(timer);
 				GameManager.Fsm.Event("FinishedDownload");
             }
-
-			//float percentage = (float)GameManager.FsmVariables.GetFsmFloat ("Percentage");
-			//percentage = Progress.fillAmount * 100;
-
-			//(float)GameManager.FsmVariables.GetFsmFloat ("Percentage") = Progress.fillAmount * 100;
-
-			//GameManager.FsmVariables.
         }
 	}
 }
