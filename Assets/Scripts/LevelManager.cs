@@ -194,12 +194,12 @@ public class LevelManager : MonoBehaviour
         bool shouldGoFast = true;
         for (int i = 0; i < xPositions.Length; ++i)
         {
-            shouldGoFast = shouldGoFast && (xPositions[i] > _sizeOfVisibleCable * _cableOffset / 2);
+            shouldGoFast = shouldGoFast && (xPositions[i] > 30);
         }
         bool shouldGoSlow = true;
         for (int i = 0; i < xPositions.Length; ++i)
         {
-            shouldGoSlow = shouldGoSlow && (xPositions[i] < _sizeOfVisibleCable * _cableOffset / 2);
+            shouldGoSlow = shouldGoSlow && (xPositions[i] < 30);
         }
         if (shouldGoFast)
         {
