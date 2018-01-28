@@ -163,32 +163,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &729686091
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/CRT
-  m_Shader: {fileID: 4800000, guid: a58601bfbe1634c4cb8f848f82f62811, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Floats:
-    - hardPix: -4
-    - hardScan: -8
-    - maskDark: 1.03
-    - maskLight: 1.8
-    - resScale: 1
-    m_Colors:
-    - warp: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &863790683
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +480,32 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565502717}
+--- !u!21 &1847903172
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/CRT
+  m_Shader: {fileID: 4800000, guid: a58601bfbe1634c4cb8f848f82f62811, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - hardPix: -4
+    - hardScan: -8
+    - maskDark: 1.03
+    - maskLight: 1.8
+    - resScale: 1
+    m_Colors:
+    - warp: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2054688759
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +884,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: TitleScree
+          value: TitleScreen
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -1114,4 +1114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0438c5baddf4690bbcebb49cceb609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 729686091}
+  material: {fileID: 1847903172}

@@ -838,6 +838,9 @@ MonoBehaviour:
         paramDataPos: 00000000010000000000000000000000010000000000000001000000020000000000000000000000010000000200000003000000040000000500000006000000070000000100000000000000010000000200000003000000040000000500000006000000070000000800000000000000020000000000000000000000090000000100000001000000010000000200000003000000020000000000000000000000020000000300000004000000030000000300000000000000000000000800000004000000
         paramByteDataSize: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
     events:
+    - name: LEVEL LOADED
+      isSystemEvent: 1
+      isGlobal: 0
     - name: Create Player
       isSystemEvent: 0
       isGlobal: 0
@@ -859,7 +862,15 @@ MonoBehaviour:
     - name: Player Created
       isSystemEvent: 0
       isGlobal: 0
-    globalTransitions: []
+    globalTransitions:
+    - fsmEvent:
+        name: LEVEL LOADED
+        isSystemEvent: 1
+        isGlobal: 0
+      toState: Check Create  Player
+      linkStyle: 0
+      linkConstraint: 0
+      colorIndex: 0
     variables:
       floatVariables: []
       intVariables:
@@ -1109,7 +1120,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &494802415
+--- !u!21 &667173046
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1983,7 +1994,7 @@ MonoBehaviour:
         - Send Start Level Message
         - 
         actionEnabled: 010101010101
-        actionIsOpen: 000000000000
+        actionIsOpen: 000000000100
         actionStartIndex: 000000000200000004000000060000000d00000011000000
         actionHashCodes: 978a9b03978a9b03978a9b03ca51e90091d45a005e69bb04
         unityObjectParams: []
@@ -4048,6 +4059,9 @@ MonoBehaviour:
         paramDataPos: 00000000000000000000000000000000000000000000000001000000
         paramByteDataSize: 04000000000000000000000000000000000000000000000000000000
     events:
+    - name: LEVEL LOADED
+      isSystemEvent: 1
+      isGlobal: 0
     - name: Add Player X Position
       isSystemEvent: 0
       isGlobal: 0
@@ -4175,7 +4189,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -4330,7 +4344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0438c5baddf4690bbcebb49cceb609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 494802415}
+  material: {fileID: 667173046}
 --- !u!1 &1788886111
 GameObject:
   m_ObjectHideFlags: 0

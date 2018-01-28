@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
             SoundsDict.Add(SoundsList[i].name, SoundsList[i]);
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void playSound(string soundKey) {
