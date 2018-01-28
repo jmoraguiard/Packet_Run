@@ -58,6 +58,7 @@ public class LevelManager : MonoBehaviour
         _cableTypesCounter = new int[GetNumberOfActiveCables()];
 
         PrepareCables();
+        SoundManager.Instance.PlayRepeatedMusic("Mecha_Action");
     }
 
     public bool IsRunning()
