@@ -22,7 +22,7 @@ Material:
     - hardPix: -2.64
     - hardScan: -13.6
     - maskDark: 0.85
-    - maskLight: 0.56
-    - resScale: 1
+    - maskLight: 0.89
+    - resScale: 6.2
     m_Colors:
     - warp: {r: 0, g: 0, b: 0, a: 0}
