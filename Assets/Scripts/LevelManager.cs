@@ -142,6 +142,12 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+    public void setCablesProbabilities(int[] probabilities) {
+        normalCablesProbability = probabilities[0];
+        blockedCablesProbability = probabilities[1];
+        gapCablesProbability = probabilities[2];
+    }
+
 
     public void setPlayersXPositions(float[] xPositions) {
         bool shouldGoFast = true;
