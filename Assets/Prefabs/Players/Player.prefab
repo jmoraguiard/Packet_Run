@@ -28,6 +28,8 @@ GameObject:
   - component: {fileID: 114036471052624706}
   - component: {fileID: 114966931021467786}
   - component: {fileID: 114697702334439998}
+  - component: {fileID: 114841359452598606}
+  - component: {fileID: 114031583626735124}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -116,6 +118,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114031583626735124
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599651655610310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 82786459, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 114966931021467786}
 --- !u!114 &114036471052624706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1755,7 +1770,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114309059711139752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2098,7 +2113,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114427254284457380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2677,7 +2692,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114697702334439998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3174,7 +3189,20 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &114841359452598606
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599651655610310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -664232604, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 114309059711139752}
 --- !u!114 &114966931021467786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3297,25 +3325,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.ArrayContains
         - HutongGames.PlayMaker.Actions.ArrayDeleteAt
-        - HutongGames.PlayMaker.Actions.ArrayLength
-        - HutongGames.PlayMaker.Actions.IntAdd
-        - HutongGames.PlayMaker.Actions.IntAdd
-        - HutongGames.PlayMaker.Actions.IntClamp
-        - HutongGames.PlayMaker.Actions.SetIntValue
         - HutongGames.PlayMaker.Actions.DestroySelf
         customNames:
         - Check if I am in Players Array
         - Delete myself from Array
         - 
-        - 
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 0101010101010001
-        actionIsOpen: 0000000000000001
-        actionStartIndex: 0000000006000000090000000c0000000f000000120000001600000019000000
-        actionHashCodes: 75f9ba05a790bd03fb258801603dd905603dd9052181e802603dd90562f95203
+        actionEnabled: 010101
+        actionIsOpen: 000001
+        actionStartIndex: 000000000600000009000000
+        actionHashCodes: 75f9ba05a790bd0362f95203
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -3379,19 +3397,6 @@ MonoBehaviour:
           stringValues: []
           vector4Values: []
           objectReferences: []
-        - useVariable: 1
-          name: Players
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          type: 3
-          objectTypeName: UnityEngine.Object
-          floatValues: []
-          intValues: 
-          boolValues: 
-          stringValues: []
-          vector4Values: []
-          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams:
@@ -3403,66 +3408,6 @@ MonoBehaviour:
           value: 0
         - useVariable: 1
           name: Index of Player
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: Number of Players
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: Number of Players
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: Number of Players
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: Number of Players
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: -1
-        - useVariable: 1
-          name: Number of Players
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 2
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 7
-        - useVariable: 1
-          name: Cables
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: Number of Players
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -3489,12 +3434,12 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 0000000000
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 2900000027000000100000001100000017000000170000002900000010000000170000002900000010000000010000001000000010000000010000001000000010000000010000001000000010000000100000000100000010000000100000000100000011000000
+        paramDataType: 29000000270000001000000011000000170000001700000029000000100000001700000011000000
         paramName:
         - array
         - value
@@ -3505,25 +3450,9 @@ MonoBehaviour:
         - array
         - index
         - indexOutOfRangeEvent
-        - array
-        - length
-        - everyFrame
-        - intVariable
-        - add
-        - everyFrame
-        - intVariable
-        - add
-        - everyFrame
-        - intVariable
-        - minValue
-        - maxValue
-        - everyFrame
-        - intVariable
-        - intValue
-        - everyFrame
         - detachChildren
-        paramDataPos: 000000000000000000000000000000000000000001000000010000000100000002000000020000000200000000000000030000000400000001000000050000000600000002000000070000000800000009000000030000000a0000000b0000000400000001000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000010000000000000000000000010000000000000000000000000000000100000000000000000000000100000000000000
+        paramDataPos: 00000000000000000000000000000000000000000100000001000000010000000200000001000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
     events:
     - name: Collided
       isSystemEvent: 0
@@ -3575,7 +3504,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -3590,7 +3519,7 @@ MonoBehaviour:
     handleCollisionEnter2D: 0
     handleCollisionExit2D: 0
     handleCollisionStay2D: 0
-    handleTriggerEnter: 0
+    handleTriggerEnter: 1
     handleTriggerExit: 0
     handleTriggerStay: 0
     handleCollisionEnter: 0
@@ -3608,4 +3537,4 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
