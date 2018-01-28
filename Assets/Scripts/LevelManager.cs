@@ -83,6 +83,9 @@ public class LevelManager : MonoBehaviour
 
     public void AddCableToLine(int lineIndex)
     {
+        if (lineIndex >= GetNumberOfActiveCables()) {
+            return;
+        }
         GameObject cable = GetRandomCable(lineIndex);
         Vector3 position = _lastObjects[lineIndex].transform.position;
         MovementComponent movementComponent = cable.GetComponent<MovementComponent>();
