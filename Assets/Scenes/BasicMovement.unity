@@ -293,8 +293,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundsList:
   - {fileID: 8300000, guid: fa48fd069663c416c8ae40edb1dbe116, type: 3}
-  efxSource: {fileID: 2039317928}
-  musicSource: {fileID: 675157571}
+  - {fileID: 8300000, guid: 5472da1329f9d46938e1cf69cf394747, type: 3}
+  - {fileID: 8300000, guid: 220e765cf1e3443e199b7fb5bde3141e, type: 3}
+  - {fileID: 8300000, guid: dac971db9d8e44cf68cc68975aa4d203, type: 3}
+  - {fileID: 8300000, guid: 75e4753a29bb340b9b8b78d10cae7a65, type: 3}
+  - {fileID: 8300000, guid: 51982c0f9fe154affbf6bab285add57a, type: 3}
+  EfxSource: {fileID: 2039317928}
+  MusicSource: {fileID: 675157571}
 --- !u!1 &416526995
 GameObject:
   m_ObjectHideFlags: 0

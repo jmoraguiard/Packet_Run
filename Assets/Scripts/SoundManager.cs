@@ -7,8 +7,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance = null;
     public AudioClip[] SoundsList;
     public Dictionary<string, AudioClip> SoundsDict;
-    public AudioSource efxSource;
-    public AudioSource musicSource;   
+    public AudioSource EfxSource;
+    public AudioSource MusicSource;   
 
     void Awake()
     {
@@ -26,19 +26,13 @@ public class SoundManager : MonoBehaviour
     }
 
     public void playSound(string soundKey) {
-        efxSource.clip = SoundsDict[soundKey];
-        efxSource.Play();
-    }
-
-    public void PlaySingle(AudioClip clip)
-    {
-        efxSource.clip = clip;
-        efxSource.Play();
+        EfxSource.clip = SoundsDict[soundKey];
+        EfxSource.Play();
     }
 
     public void PlayRepeatedMusic(string musickey) {
-        musicSource.clip = SoundsDict[musickey];
-        musicSource.loop = true;
-        musicSource.Play();
+        MusicSource.clip = SoundsDict[musickey];
+        MusicSource.loop = true;
+        MusicSource.Play();
     }
 }
