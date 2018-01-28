@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
     public bool StartThingy = false;
 
     private int _numberOfActivePlayers;
-    private float _cableOffset = 3f;
+    private float _cableOffset = 6.15f;
     private int _sizeOfVisibleCable = 23;
 
     private GameObject[] _lastObjects;
@@ -93,6 +93,10 @@ public class LevelManager : MonoBehaviour
         movementComponent.Init(Velocity, new Vector3(position.x + _cableOffset, position.y, position.z), -_cableOffset, lineIndex);
         movementComponent.OnDisappear += AddCableToLine;
         _lastObjects[lineIndex] = cable;
+    }
+
+    public float GetMaxCableLength(){
+        return _cableOffset * (_sizeOfVisibleCable - 2);
     }
 
     private void PrepareCables()
